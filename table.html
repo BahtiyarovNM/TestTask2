@@ -1,0 +1,44 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; Charset=UTF-8">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+
+
+<div id="content"></div>
+
+
+<script type="text/javascript">
+
+    var inProcess = false;
+    function show() {
+        if (inProcess) return;
+        inProcess = true;
+        $.ajax({
+
+            url: "http://localhost/y/index.php/api",
+            cache: false,
+            success: function (html) {
+                inProcess = false;
+                $("#content").html(html);
+            },
+            error: function () {
+                inProcess = true;
+            }
+
+        });
+    }
+
+    $(document).ready(function () {
+        show();
+        setInterval(function () {
+            show();
+        }, 1000);
+    });
+
+</script>
+
+
+</body>
+</html>

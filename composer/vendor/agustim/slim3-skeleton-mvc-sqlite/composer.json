@@ -1,0 +1,32 @@
+{
+  "name": "agustim/slim3-skeleton-mvc-sqlite",
+  "description": "Simple Slim Framework 3 skeleton with Twig, Monolog, Doctrine in Sqlite.",
+  "license": "MIT",
+  "type": "project",
+  "keywords": [
+    "slim-framework",
+    "skeleton",
+    "mvc",
+    "sqlite"
+  ],
+  "authors": [
+    {
+      "name": "Agustí Moll i Garcia",
+      "email": "agusti@gmail.com",
+      "homepage": "http://github.com/agustim"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "App\\Controller\\": "app/src/controllers",
+      "App\\Model\\": "app/src/models"
+    }
+  },
+  "require": {
+    "slim/slim": "~3.0",
+    "slim/twig-view": "^2.0",
+    "slim/flash": "^0.1.0",
+    "monolog/monolog": "^1.17",
+    "doctrine/orm": "2.5.*"
+  }
+}
